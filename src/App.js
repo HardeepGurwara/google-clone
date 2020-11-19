@@ -13,7 +13,6 @@ function App() {
 
           <Route path="/">
             <Home />
-            <h1>lets make a google clone</h1>
           </Route>
         </Switch>
       </Router>
