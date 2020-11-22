@@ -13,8 +13,10 @@ import RoomIcon from "@material-ui/icons/Room";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 function SearchPage() {
   const [{ term }, dispatch] = useStateValue();
-  // const { data } = useGoogleSearch(term); LIVE API CALL
-
+  // const { data } = useGoogleSearch(term);
+  // LIVE API CALL
+  // Mock API CAll
+  const data = response;
   return (
     <div className="searchPage">
       <div className="searchPage__header">
@@ -67,7 +69,34 @@ function SearchPage() {
         </div>
       </div>
 
-      <div className="searchPage__results"></div>
+      {true && (
+        <div className="searchPage__results">
+          <p className="searchPage__resultCount">
+            About {data?.searchInformation.formattedTotalResults} results (
+            {data?.searchInformation.formattedSearchTime} Seconds) for {term}
+          </p>
+
+          {data?.items.map((item) => (
+            <div className="searchPage__result">
+              <a href={item.link}>
+                {item.pagemap?.cse_image?.length > 0 &&
+                  item.pagemap?.cse_image[0]?.src && (
+                    <img
+                      className="searchPage__resultImage"
+                      src={item.pagemap?.cse_image[0].src}
+                      alt=""
+                    />
+                  )}
+                {item.displayLink}
+              </a>
+              <a href={item.link} className="searchPage__resultTitle">
+                <h2>{item.title}</h2>
+              </a>
+              <p className="searchPage__resultSnippet">{item.snippet}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
