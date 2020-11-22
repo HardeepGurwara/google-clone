@@ -44,3 +44,7 @@
     color: #222;
     background-image: -webkit-linear-gradient(top, #f8f8f8, );
 }
+
+.search__buttonsHidden{
+    display: none !important;
+}
