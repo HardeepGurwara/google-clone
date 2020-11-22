@@ -24,3 +24,30 @@
     margin: unset;
     max-width: unset;
 }
+
+.searchPage__options{
+    display: flex;
+    align-items: center;
+    color: gray;
+}
+
+.searchPage__leftOptions, .searchPage__rightOptions{
+    display: flex;
+}
+.searchPage__options a, 
+.searchPage__rightOptions a{
+    text-decoration: none;
+    color: gray;
+}
+.searchPage__rightOptions{
+    margin-left: 80px;
+}
+
+.searchPage__option{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.searchPage__option a{
+    margin-left: 5px
+}
